@@ -7,23 +7,14 @@ from numpy_ringbuffer import RingBuffer
 import queue
 import time
 
-
-## Please change the following number so that it matches to the microphone that you are using. 
 DEVICE_INDEX = 1
-
-## Compute the audio statistics every `UPDATE_INTERVAL` seconds.
 UPDATE_INTERVAL = 1.0
-
-
-
-### Things you probably don't need to change
 FORMAT=np.float32
 SAMPLING_RATE = 16000
 CHANNELS=1
 
-
+avg =[]
 def main():
-    ### Setting up all required software elements: 
     audioQueue = queue.Queue() #In this queue stores the incoming audio data before processing.
     pyaudio_instance = pyaudio.PyAudio() #This is the AudioDriver that connects to the microphone for us.
 
@@ -34,13 +25,9 @@ def main():
     stream = pyaudio_instance.open(input=True,start=False,format=pyaudio.paFloat32,channels=CHANNELS,rate=SAMPLING_RATE,frames_per_buffer=int(SAMPLING_RATE/2),stream_callback=_callback,input_device_index=DEVICE_INDEX)
     
     
-    # One essential way to keep track of variables overtime is with a ringbuffer. 
-    # As an example the `AudioBuffer` it stores always the last second of audio data. 
     AudioBuffer = RingBuffer(capacity=SAMPLING_RATE*1, dtype=FORMAT) # 1 second long buffer.
     
-    # Another example is the `VolumeHistory` ringbuffer. 
     VolumeHistory = RingBuffer(capacity=int(20/UPDATE_INTERVAL), dtype=FORMAT) ## This is how you can compute a history to record changes over time
-    ### Here  is a good spot to extend other buffers  aswell that keeps track of varailbes over a certain period of time. 
 
     nextTimeStamp = time.time()
     stream.start_stream()
@@ -96,10 +83,10 @@ def main():
 
 
                 LoudestFrequency = frequencies[amplitudes.argmax()]
+                avg.append(LoudestFrequency)
+                a = (sum(avg) // len(avg))
+                print(a)
                 
-                print("Loudest Frqeuncy:",LoudestFrequency)
-                print("RMS volume:",volumneSlow)
-                print("Volume Change:",volumechange)
                 
                 nextTimeStamp = UPDATE_INTERVAL+time.time() # See `UPDATE_INTERVAL` above
 

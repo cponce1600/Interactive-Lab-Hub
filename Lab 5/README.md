@@ -102,6 +102,16 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+<img src="pic2.png" height="150">
+<img src="p1.png" height="150">
+<img src="p2.png" height="150">
+<img src="p3.png" height="150">
+<img src="p4.png" height="150">
+
+
+
+The siloute game works well with contours because it can outline a person. So it would work perfectly. The face detecter works best with the mood detecter since it already can find faces. It just needs to determine how the person is feeling based on their facial expression. Object detector can be used to find what objects are being thrown in the trash. It gets a bit harder with specific items but again would need more training to be perfect. The flow detecter is a bit more tricky. The idea that came to mind is to find the flow of mouses. This could be set up at night to find when mice where mice are coming from and track them down. This would be useful in the train stations to find where rats are coming from and deal with them. 
+
 #### Filtering, FFTs, and Time Series data. 
 Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU or Microphone data stream could create a simple activity classifier between walking, running, and standing.
 
@@ -139,6 +149,8 @@ For technical references:
 
 
 **\*\*\*Include links to your code here, and put the code for these in your repo--they will come in handy later.\*\*\***
+
+Linked in repo 
 
 ### (Optional Reading) Introducing Additional Concepts
 The following sections ([MediaPipe](#mediapipe) and [Teachable Machines](#teachable-machines)) are included for your own optional learning. **The associated scripts will not work on Fall 2022's Pis, so you can move onto part B.** However, you are welcome to try it on your personal computer. 
@@ -229,6 +241,9 @@ This might take a while to get fully installed. After installation, connect your
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
+<img src="pic.png" height="150">
+The idea here is to use object detection to keep count of the candy you hand out during halloween. This would be useful for people to know exactly how much candy they need next year so they don't run out or have to much. The camera could look over the basket and as kids take candy it will track how many candies are lost. Another iteration would see the camera capture as the user hands the candy over. Both are great way to keep track of the candy lost.
+
 ### Part C
 ### Test the interaction prototype
 
@@ -239,11 +254,28 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+The prototype is supposed to track how many candies have been taken from the basket. 
+
+The prototype fails when there are more objects in the Frame of the video 
+
+The reason it fails is because the model is to general. It detects any object not just the candy. It also hard for it to recognize it is the same piece of candy. So if the candy is in frame for to long it will count it multiple times. 
+
+Other scenarios that might cause issues is when multiple candies are taken at once. It also does not help that our pi is not powerful enough to catch more frames. When a candy is there for to long it will be counted to many times.
+
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
+
+In it’s current iteration the user would notice the uncertainties in the system. This is because the system is just to general. 
+
+The user would not be too impacted by a miss classification. As long as it doesn’t happen repeatedly it is not to big of an issue. We can have different classes for different candy. So a candy can be misclassified but as long as it is seen as any candy it is still fine. 
+
+The system can be made better if the model could detect candy itself and not objects. This would help it only detect candy and not other things. This would help make it more accurate 
+
+The main optimization that would help this would be using a candy specific model.
 
 ### Part D
 ### Characterize your own Observant system
@@ -260,8 +292,26 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+[![video](screen.png)](https://www.youtube.com/watch?v=gfQctXVX6eM)
+
+This system can be used to keep track of the number of candy you handed out during halloween. This will help you prepare for the next year and make sure you buy just enough candy. 
+
+A good environment for this system is a well light one. With candy the model knows.
+
+A bad environment for this system is once it get darks. As well as when there are lots of objects in the frame.
+
+The system breaks when there are multiple things happening at once since multiple objects will be detected and the be hard to accurately capture what is going on. 
+
+The system will detect candy once it’s left the basket to track how much candy has been lost. 
+
+The system feels bad since the model is to general to  only detect candy. It 
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+[![video](screen.png)](https://www.youtube.com/watch?v=QOYI1RfxXxY)
+
+Since my pi does not have the new OS I was unable to use teaching machine. However Using the teaching machine website i was able to show what it might look like. It would work just as the video shows. It would see a candy and add it to the counter. There are multiple classes however the candy counter ignores the class itself. 
