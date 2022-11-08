@@ -96,12 +96,25 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 
+**Carlos**
+
 click to enlarge!
+
 <img src="1.png" height="150">
 <img src="2.png" height="150">
 <img src="3.png" height="150">
 <img src="4.png" height="150">
 <img src="5.png" height="150">
+
+**Trevor**
+
+<img src="t1.png" height="150">
+<img src="t2.png" height="150">
+<img src="t3.png" height="150">
+
+Idea 4: Use the camera and an Open CV library to detect how many people are in line at the Cafe.  Rhe pi running the Open CV recognition algorithms will continuously send a message to a specific channel with the number of people in line.  A light would be set up in Tata as either green or red that would change depending on wether it was a good time to go the Cafe or not (<3 people in line)
+
+Idea 5:  Plant watering system.  One central pi, would be connected to the internet and have a log of all plant watering times and schedules.  Each plant would have a receiving pi that is attached to a water dispenser.  The user could interact and set watering through the central pi that could then push out messages to each plant with a customized watering schedule for that plant based on weather, humidity and other factors.  Whenever a message would be sent, the receiving pi would interpret what plant the message was sent about and how much water it send to put in.  If the pi is attached to a plant of that type it will release the specified amount.
 
 ### Part C
 ### Streaming a Sensor
