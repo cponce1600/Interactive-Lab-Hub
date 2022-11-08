@@ -1,6 +1,6 @@
 # Little Interactions Everywhere
 
-**NAMES OF COLLABORATORS HERE**
+**Carlos Ponce, Trevor Morcott**
 
 ## Prep
 
@@ -95,6 +95,11 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+<img src="1.png" height="150">
+<img src="2.png" height="150">
+<img src="3.png" height="150">
+<img src="4.png" height="150">
+<img src="5.png" height="150">
 
 ### Part C
 ### Streaming a Sensor
@@ -116,9 +121,13 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
  ```
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
+<img src="twiz.png" height="150">
+<img src="6.png" height="150">
+
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
+In repo
 
 ### Part D
 ### The One True ColorNet
@@ -159,11 +168,26 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
+For our design, we created a password protected doorbell, that alerts students in Tata
+laboratory that a student is at the door without a card. This is a useful device as the receiver will only alert students if the password is correctly entered into the system. The design works by sending messages from one input raspberry pi using the capacitive touch sensors which is then read and verified by a receiving pi. The pi will then alert users if they should go get the door. A normal doorbell would ring regardless of who pushes it which may lead helpful students to let bad actors inside and needlessly alert students that a non-classmate may be at the door. By adding a password protection, it ensures students will only be notified to help a verified user into the space. The networking also enables it to be pushed out to many students and potentially customized by password and groups for quick notifications to other students throughout campus.
+
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+
+<img src="q2.png" height="150">
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
+A few considerations we had while building the system were
+1)  how would users know to enter the password?  This would require signage however we may actually want to keep it as a student secret so as random people touching it does not ruin it
+2)  Could people remember a password? Therefor we kept it short to only 3 numbers
+3)  What would be the best way to enter the information.  We considered the rotary encoder however this we found to be more confusing on knowing what each exact number was on the dial so ultimately went with the button
+
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
-<!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
+[![video](screen.png)](https://www.youtube.com/watch?v=NdGUfX192qw)
 
+*Reflection*
+  On reflection I think our system would have worked well however was met with a couple limitations.
+  1) How to power the pi in a nondescript way.  We found it very difficult to find a plug close enough to the door for the pi that made it clear the lock was related to the door
+  2) How would people want to be alerted?  Testing vocally was disruptive and would likely be especially disruptive if consistently used. However we also found a light may not be noticed.  Potentially using something like vibration could work better for personal notification while a large light would be better for full room notification.
+  3) How else could we leverage using network affects?  Could we somehow leverage multiple rooms with this feature ?
