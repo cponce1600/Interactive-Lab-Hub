@@ -95,14 +95,12 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+
+click to enlarge!
 <img src="1.png" height="150">
-
 <img src="2.png" height="150">
-
 <img src="3.png" height="150">
-
 <img src="4.png" height="150">
-
 <img src="5.png" height="150">
 
 ### Part C
@@ -133,7 +131,7 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
-In repo
+In repo(dis.py)
 
 ### Part D
 ### The One True ColorNet
@@ -166,7 +164,7 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
 
-in repo
+In repo (readcolor.py)
 
 
 ### Part E
@@ -193,6 +191,7 @@ A few considerations we had while building the system were
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
 [![video](screen.png)](https://www.youtube.com/watch?v=NdGUfX192qw)
+
 
 *Reflection*
   On reflection I think our system would have worked well however was met with a couple limitations.

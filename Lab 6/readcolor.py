@@ -34,6 +34,14 @@ screenColor = None
 def on_message(cleint, userdata, msg):
     screenColor = msg.payload.decode('UTF-8')
     print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
+    if msg.topic == msg.topic:
+        while not screenColor:
+        try:
+            screenColor = color565(*list(webcolors.name_to_rgb(msg.payload.decode('UTF-8'))))
+        except ValueError:
+            print("whoops I don't know that one")
+
+        display.fill(screenColor)
 
 
 client = mqtt.Client(str(uuid.uuid1()))
@@ -46,13 +54,5 @@ client.on_message = on_message
 client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
-
-while not screenColor:
-    try:
-        screenColor = color565(*list(webcolors.name_to_rgb(input('Type the name of a color and hit enter: '))))
-    except ValueError:
-        print("whoops I don't know that one")
-
-display.fill(screenColor)
  
-#client.loop_forever()
+client.loop_forever()
