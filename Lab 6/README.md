@@ -96,9 +96,13 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 <img src="1.png" height="150">
+
 <img src="2.png" height="150">
+
 <img src="3.png" height="150">
+
 <img src="4.png" height="150">
+
 <img src="5.png" height="150">
 
 ### Part C
@@ -121,7 +125,9 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
  ```
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
+
 <img src="twiz.png" height="150">
+
 <img src="6.png" height="150">
 
 
@@ -159,6 +165,8 @@ You may ask "but what if I missed class?" Am I not admitted into the collective 
 Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs. Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way. 
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
+
+in repo
 
 
 ### Part E
