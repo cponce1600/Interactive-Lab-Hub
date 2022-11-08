@@ -173,17 +173,20 @@ In repo (readcolor.py)
 Find at least one class (more are okay) partner, and design a distributed application together based on the exercise we asked you to do in this lab.
 
 **Carlos, Trevor**
+
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
 For our design, we created a password protected doorbell, that alerts students in Tata
 laboratory that a student is at the door without a card. This is a useful device as the receiver will only alert students if the password is correctly entered into the system. The design works by sending messages from one input raspberry pi using the capacitive touch sensors which is then read and verified by a receiving pi. The pi will then alert users if they should go get the door. A normal doorbell would ring regardless of who pushes it which may lead helpful students to let bad actors inside and needlessly alert students that a non-classmate may be at the door. By adding a password protection, it ensures students will only be notified to help a verified user into the space. The networking also enables it to be pushed out to many students and potentially customized by password and groups for quick notifications to other students throughout campus.
 
 **Carlos, Trevor**
+
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
 <img src="q2.png" height="150">
 
 **Trevor**
+
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
 A few considerations we had while building the system were
@@ -192,11 +195,13 @@ A few considerations we had while building the system were
 3)  What would be the best way to enter the information.  We considered the rotary encoder however this we found to be more confusing on knowing what each exact number was on the dial so ultimately went with the button
 
 **Carlos/ Trevor**
+
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
 [![video](screen.png)](https://www.youtube.com/watch?v=NdGUfX192qw)
 
 **Trevor**
+
 *Reflection*
   On reflection I think our system would have worked well however was met with a couple limitations.
   1) How to power the pi in a nondescript way.  We found it very difficult to find a plug close enough to the door for the pi that made it clear the lock was related to the door
